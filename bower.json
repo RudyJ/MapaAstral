@@ -1,0 +1,20 @@
+{
+  "name": "MapaAstral",
+  "homepage": "https://github.com/mspavanelli/MapaAstral",
+  "authors": [
+    "mspavanelli <mspavanelli@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ]
+}
