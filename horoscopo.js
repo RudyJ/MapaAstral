@@ -58,7 +58,7 @@ var preencheLinha = function(signos) {
 
 var montaTabela = function() {
 	
-	var tabela = $('<table>').attr('id', 'tabela-signo').addClass('table table-striped table-hover');
+	var tabela = $('<table>').attr('id', 'tabela-signo').addClass('table table-striped table-hover table-responsive');
 	
 	var head = $('<thead>').appendTo(tabela);
 	$('<th>').text('Casas').appendTo(head);
@@ -78,21 +78,78 @@ var montaTabela = function() {
 }
 
 var adicionaAspecto = function() {
-	var signo = $(".seletor-signo option:selected").val();
+	var signo = $(".seletor-signo.aspecto option:selected").val();
 	var aspecto = $(".seletor-aspecto option:selected").val();
-	console.log('Inserindo ' + aspecto + ' em ' + signo);
+
+	var celula = $('#tabela-signo').find(".signo:contains(" + signo + ")").next();
+	var rotulo = $('<label>').addClass('label label-default').text(aspecto);
+
+	rotulo.appendTo(celula);
+}
+
+var inserePainel = function(signo, aspecto) {
+	console.log('Inserindo painel (' + signo + ':' + aspecto + ')');
+
+	// código painel + inserir após resultado
+	var painel = $('<div>').addClass('panel panel-default')
+		.appendTo($('<div>').addClass('col-xs-12 col-md-6').appendTo('#resultados'));
+	$('<h3>').addClass('panel-title').text(aspecto + ' em ' + signo)
+		.appendTo($('<div>').addClass('panel-heading')
+			.appendTo(painel));
+	$('<div>').addClass('panel-body').text('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus voluptate labore ab dignissimos, dolore sed accusamus. Nulla quasi illum assumenda inventore quae odit eos repellat vero? Dolores architecto assumenda minus.')
+		.appendTo(painel);
+}
+
+var geraResultado = function() {
+	var i = 0;
+	var aspectos = [];
+	$('.signo').each(function() {
+		var signo = $(this).text();
+		$(this).next().children().each(function() {
+			aspectos.push(($(this).text()));
+		});
+
+		for (var i = aspectos.length - 1; i >= 0; i--) {
+			inserePainel(signo, aspectos[i]);
+		};
+		aspectos = [];
+	});
+}
+
+var testeAutomatizado = function() {
+
+	// seleciona signo
+	$(preencheLinha(listaSignos('Áries')));
+
+	// insere aspectos
+	var celula = $('#tabela-signo').find(".signo:contains(Touro)").next();
+	$('<label>').addClass('label label-default').text("Lua").appendTo(celula);
+	$('<label>').addClass('label label-default').text("Marte").appendTo(celula);
 }
 
 $(document).ready( function() {
 	$(insereOpcoesdeSignos());
 	$(montaTabela());
 	$(montaAspectos());
+
+	$('form').attr('onsubmit', 'return false;'); // previne que a página seja recarregada
 	
 	$('#run').click(function() {
 		var signo = $(".seletor-signo option:selected").val();
 		$(preencheLinha(listaSignos(signo)));
 		$('select').removeAttr('disabled');
 	});
-	
+
 	$('#adiciona-aspecto').click(adicionaAspecto);
+	// remove aspecto
+	$('.label').on('click', function() {
+		$(this).animate({'fontSize':'100px', 'margin-left':'+=100'}, function() {
+			// $(this).remove();
+		});
+	});
+
+	$('#gera-resultado').click(geraResultado);
+
+	$(testeAutomatizado());
 });
+

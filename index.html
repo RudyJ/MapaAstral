@@ -16,6 +16,9 @@
 		label {
 			font-weight: 400;
 		}
+		.label {
+			margin-right: 5px;
+		}
 	</style>
 </head>
 <body>
@@ -40,7 +43,7 @@
 				<label>Insira os aspectos</label>
 				<form class="form-inline">
 					<div class="form-group">
-						<select class="form-control seletor-signo" disabled name="signo">
+						<select class="form-control seletor-signo aspecto" disabled name="signo">
 							<option value="" disabled selected>Escolha um signo</option>
 						</select>
 					</div>
@@ -48,8 +51,11 @@
 						<select class="form-control seletor-aspecto" disabled name="signo">
 							<option value="" disabled selected>Escolha um aspecto</option>
 						</select>
+						<button id="adiciona-aspecto" class="btn btn-primary">
+							<span class="glyphicon glyphicon-plus"></span>
+						</button>
+						<div id="teste"></div>
 					</div>
-					<button id="adiciona-aspecto" class="btn btn-primary">Adicionar</button>
 				</form>
 			</div>
 		</div>
@@ -58,7 +64,7 @@
 
 		<!-- Tabela e prévia -->
 		<div class="row">
-			<div class="col-xs-12 col-md-8" id="dados"></div>
+			<div class="col-xs-12" id="dados"></div>
 		</div>
 		<button id="gera-resultado" class="btn btn-block btn-success">Gerar Relatório</button>
 		<hr>
@@ -66,7 +72,7 @@
 		<!-- Resultados -->
 		<div class="row">
 			<h2 id="resultado">Resultado</h2>
-			
+			<div id="resultados"></div>
 		</div>
 
 	</div> <!-- container-->
