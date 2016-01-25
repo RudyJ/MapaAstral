@@ -154,6 +154,24 @@ function incluirAnaliseNome() {
 }
 
 function geraResultado() {
+	$('#resultados').children().remove();
+
+	var divSignos = $('<div>').attr('id', 'resultado-signos').appendTo('#resultados');
+	var divAspectos = $('<div>').attr('id', 'resultado-aspectos').appendTo('#resultados');
+	var divNome = $('<div>').attr('id', 'resultado-nome').appendTo('#resultados');
+
+	$('<h2>').text('Signos').appendTo(divSignos);
+	$('<h2>').text('Aspectos').appendTo(divAspectos);
+	$('<h2>').text('Análise do Nome').appendTo(divNome);
+
+	$('div', {
+		'id':'analise-nome',
+		'class':'table table-bordered table-striped table-hover'
+	}).appendTo(
+		$('<div>').addClass('col-xs-12')
+			.appendTo($('<div>').addClass('row'))
+	)
+
 	incluirPainelSignos();
 	incluirPainelAspectos();
 	incluirAnaliseNome();
