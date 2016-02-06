@@ -1,34 +1,4 @@
-/* DADOS */
-var signos = [
-	'Áries',
-	'Touro',
-	'Gêmeos',
-	'Câncer',
-	'Leão',
-	'Virgem',
-	'Libra',
-	'Escorpião',
-	'Sagitário',
-	'Capricórnio',
-	'Aquário',
-	'Peixes'
-]
-
-var aspectos = [
-	'Lua',
-	'Mercúrio',
-	'Vênus',
-	'Marte',
-	'Júpiter',
-	'Saturno',
-	'Urano',
-	'Netuno',
-	'Plutão',
-	'Nódulo Lunar'
-]
-
-/* FUNCOES */
-function listaSignos( signoBase ) {
+function listaSignos(signoBase) {
 	while ( signos[0] != signoBase )
 		signos.unshift(signos.pop());
 	return signos;
@@ -80,13 +50,18 @@ function adicionaAspecto() {
 	var aspecto = $(".seletor-aspecto option:selected").val();
 
 	var celula = $('#tabela-signo').find(".signo:contains(" + signo + ")").next();
-	var rotulo = $('<label>').addClass('label label-default').text(aspecto);
+	var rotulo = $('<span>').addClass('label label-default').text(aspecto);
 
 	rotulo.appendTo(celula);
 }
 
-function getText() {
-	return " Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+function getText(signo, aspecto) {
+	if ( aspecto )
+		return data[signo][aspecto];
+	else {
+		var campo = 'desc';
+		return data[signo][campo];
+	}
 }
 
 function significadoLetra(letra) {
@@ -95,19 +70,21 @@ function significadoLetra(letra) {
 
 function inserePainel(local, signo, aspecto) {
 	// código painel + inserir após resultado
-	var titulo;
+	var titulo, texto;
 	if ( aspecto != null ) {
 		titulo = aspecto + ' em ' + signo;
+		texto = getText(signo, aspecto);
 	}
 	else {
 		titulo = signo;
+		texto = getText(signo);
 	}
 	var painel = $('<div>').addClass('panel panel-default')
 		.appendTo($('<div>').addClass('col-xs-12 col-md-6').appendTo(local));
 	$('<h3>').addClass('panel-title').text(titulo)
 		.appendTo($('<div>').addClass('panel-heading')
 			.appendTo(painel));
-	$('<div>').addClass('panel-body').text(getText())
+	$('<div>').addClass('panel-body').text(texto)
 		.appendTo(painel);
 }
 
@@ -148,12 +125,30 @@ function incluirAnaliseNome() {
 	for ( var i = 0; i < letras.length; i++ ) {
 		var linha = $('<tr>');
 		$('<th>').addClass('col-xs-1').text(letras[i]).appendTo(linha);
-		$('<td>').addClass('col-xs11').text(significadoLetra(letras[i])).appendTo(linha);
+		$('<td>').addClass('col-xs-11').text(significadoLetra(letras[i])).appendTo(linha);
 		linha.appendTo($('#analise-nome > tbody'));
 	}
 }
 
 function geraResultado() {
+	$('#resultados').children().remove();
+
+	var divSignos = $('<div>').attr('id', 'resultado-signos').appendTo('#resultados');
+	var divAspectos = $('<div>').attr('id', 'resultado-aspectos').appendTo('#resultados');
+	var divNome = $('<div>').attr('id', 'resultado-nome').appendTo('#resultados');
+
+	$('<h2>').text('Signos').appendTo(divSignos);
+	$('<h2>').text('Aspectos').appendTo(divAspectos);
+	$('<h2>').text('Análise do Nome').appendTo(divNome);
+
+	$('div', {
+		'id':'analise-nome',
+		'class':'table table-bordered table-striped table-hover'
+	}).appendTo(
+		$('<div>').addClass('col-xs-12')
+			.appendTo($('<div>').addClass('row'))
+	)
+
 	incluirPainelSignos();
 	incluirPainelAspectos();
 	incluirAnaliseNome();
@@ -174,33 +169,35 @@ function testeAutomatizado() {
 
 	// insere aspectos
 	var celula = $('#tabela-signo').find(".signo:contains(Touro)").next();
-	$('<label>').addClass('label label-default').text("Lua").appendTo(celula);
-	$('<label>').addClass('label label-default').text("Marte").appendTo(celula);
+	$('<span>').addClass('label label-default').text("Lua").appendTo(celula);
+	$('<span>').addClass('label label-default').text("Marte").appendTo(celula);
 }
 
 $(document).ready( function() {
 	$(insereOpcoesdeSignos());
 	$(montaTabela());
 	$(montaAspectos());
+	$(testeAutomatizado());
 
 	$('form').attr('onsubmit', 'return false;'); // previne que a página seja recarregada
+
+	$('#select').change(function() {
+		$('#run').removeAttr('disabled');
+	});
 
 	$('#run').click(function() {
 		var signo = $(".seletor-signo option:selected").val();
 		$(preencheLinha(listaSignos(signo)));
-		$('select').removeAttr('disabled');
 		deletaAspectos();
+		console.log('Rodar');
+		$('select').removeAttr('disabled');
 	});
 
 	$('#adiciona-aspecto').click(adicionaAspecto);
 
-	// TODO: remover aspecto específico
-	$('label, .label.label-default').dblclick(function() {
-		$(this).css('background-color','transparent');
-		// $(this).remove();
+	$('span.label').dblclick(function() {
+		$(this).remove();
 	});
 
 	$('#gera-resultado').click(geraResultado);
-
-	$(testeAutomatizado());
 });
