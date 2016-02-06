@@ -80,7 +80,7 @@ function inserePainel(local, signo, aspecto) {
 		texto = getText(signo);
 	}
 	var painel = $('<div>').addClass('panel panel-default')
-		.appendTo($('<div>').addClass('col-xs-12 col-md-6').appendTo(local));
+		.appendTo($('<div>').addClass('col-xs-12').appendTo(local));
 	$('<h3>').addClass('panel-title').text(titulo)
 		.appendTo($('<div>').addClass('panel-heading')
 			.appendTo(painel));
