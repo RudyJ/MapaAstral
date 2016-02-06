@@ -27,8 +27,183 @@ var aspectos = [
 	'Nódulo Lunar'
 ]
 
+var data =
+{
+	"Áries": {
+		"desc": 'Texto sobre aries',
+		"Lua": 'Como é a lua em aries',
+		'Mercúrio': 'Aries em ...',
+		'Vênus': 'Aries em ...',
+		'Marte': 'Aries em ...',
+		'Júpiter': 'Aries em ...',
+		'Saturno': 'Aries em ...',
+		'Urano': 'Aries em ...',
+		'Netuno': 'Aries em ...',
+		'Plutão': 'Aries em ...',
+		'Nódulo Lunar': 'Aries em ...'
+	},
+	"Touro": {
+		"desc": 'Texto sobre touro',
+		"Lua": 'Como é a lua em touro',
+		'Mercúrio': 'Aries em ...',
+		'Vênus': 'Aries em ...',
+		'Marte': 'Aries em ...',
+		'Júpiter': 'Aries em ...',
+		'Saturno': 'Aries em ...',
+		'Urano': 'Aries em ...',
+		'Netuno': 'Aries em ...',
+		'Plutão': 'Aries em ...',
+		'Nódulo Lunar': 'Aries em ...'
+	},
+	"Gêmeos": {
+		"desc": 'Texto sobre aries',
+		"Lua": 'Como é a lua em aries',
+		'Mercúrio': 'Aries em ...',
+		'Vênus': 'Aries em ...',
+		'Marte': 'Aries em ...',
+		'Júpiter': 'Aries em ...',
+		'Saturno': 'Aries em ...',
+		'Urano': 'Aries em ...',
+		'Netuno': 'Aries em ...',
+		'Plutão': 'Aries em ...',
+		'Nódulo Lunar': 'Aries em ...'
+	},
+	"Gêmeos": {
+		"desc": 'Texto sobre aries',
+		"Lua": 'Como é a lua em aries',
+		'Mercúrio': 'Aries em ...',
+		'Vênus': 'Aries em ...',
+		'Marte': 'Aries em ...',
+		'Júpiter': 'Aries em ...',
+		'Saturno': 'Aries em ...',
+		'Urano': 'Aries em ...',
+		'Netuno': 'Aries em ...',
+		'Plutão': 'Aries em ...',
+		'Nódulo Lunar': 'Aries em ...'
+	},
+	"Câncer": {
+		"desc": 'Texto sobre aries',
+		"Lua": 'Como é a lua em aries',
+		'Mercúrio': 'Aries em ...',
+		'Vênus': 'Aries em ...',
+		'Marte': 'Aries em ...',
+		'Júpiter': 'Aries em ...',
+		'Saturno': 'Aries em ...',
+		'Urano': 'Aries em ...',
+		'Netuno': 'Aries em ...',
+		'Plutão': 'Aries em ...',
+		'Nódulo Lunar': 'Aries em ...'
+	},
+	"Leão": {
+		"desc": 'Texto sobre aries',
+		"Lua": 'Como é a lua em aries',
+		'Mercúrio': 'Aries em ...',
+		'Vênus': 'Aries em ...',
+		'Marte': 'Aries em ...',
+		'Júpiter': 'Aries em ...',
+		'Saturno': 'Aries em ...',
+		'Urano': 'Aries em ...',
+		'Netuno': 'Aries em ...',
+		'Plutão': 'Aries em ...',
+		'Nódulo Lunar': 'Aries em ...'
+	},
+	"Virgem": {
+		"desc": 'Texto sobre aries',
+		"Lua": 'Como é a lua em aries',
+		'Mercúrio': 'Aries em ...',
+		'Vênus': 'Aries em ...',
+		'Marte': 'Aries em ...',
+		'Júpiter': 'Aries em ...',
+		'Saturno': 'Aries em ...',
+		'Urano': 'Aries em ...',
+		'Netuno': 'Aries em ...',
+		'Plutão': 'Aries em ...',
+		'Nódulo Lunar': 'Aries em ...'
+	},
+	"Libra": {
+		"desc": 'Texto sobre aries',
+		"Lua": 'Como é a lua em aries',
+		'Mercúrio': 'Aries em ...',
+		'Vênus': 'Aries em ...',
+		'Marte': 'Aries em ...',
+		'Júpiter': 'Aries em ...',
+		'Saturno': 'Aries em ...',
+		'Urano': 'Aries em ...',
+		'Netuno': 'Aries em ...',
+		'Plutão': 'Aries em ...',
+		'Nódulo Lunar': 'Aries em ...'
+	},
+	"Escorpião": {
+		"desc": 'Texto sobre aries',
+		"Lua": 'Como é a lua em aries',
+		'Mercúrio': 'Aries em ...',
+		'Vênus': 'Aries em ...',
+		'Marte': 'Aries em ...',
+		'Júpiter': 'Aries em ...',
+		'Saturno': 'Aries em ...',
+		'Urano': 'Aries em ...',
+		'Netuno': 'Aries em ...',
+		'Plutão': 'Aries em ...',
+		'Nódulo Lunar': 'Aries em ...'
+	},
+	"Sagitário": {
+		"desc": 'Texto sobre aries',
+		"Lua": 'Como é a lua em aries',
+		'Mercúrio': 'Aries em ...',
+		'Vênus': 'Aries em ...',
+		'Marte': 'Aries em ...',
+		'Júpiter': 'Aries em ...',
+		'Saturno': 'Aries em ...',
+		'Urano': 'Aries em ...',
+		'Netuno': 'Aries em ...',
+		'Plutão': 'Aries em ...',
+		'Nódulo Lunar': 'Aries em ...'
+	},
+	"Capricórnio": {
+		"desc": 'Texto sobre aries',
+		"Lua": 'Como é a lua em aries',
+		'Mercúrio': 'Aries em ...',
+		'Vênus': 'Aries em ...',
+		'Marte': 'Aries em ...',
+		'Júpiter': 'Aries em ...',
+		'Saturno': 'Aries em ...',
+		'Urano': 'Aries em ...',
+		'Netuno': 'Aries em ...',
+		'Plutão': 'Aries em ...',
+		'Nódulo Lunar': 'Aries em ...'
+	},
+	"Aquário": {
+		"desc": 'Texto sobre aries',
+		"Lua": 'Como é a lua em aries',
+		'Mercúrio': 'Aries em ...',
+		'Vênus': 'Aries em ...',
+		'Marte': 'Aries em ...',
+		'Júpiter': 'Aries em ...',
+		'Saturno': 'Aries em ...',
+		'Urano': 'Aries em ...',
+		'Netuno': 'Aries em ...',
+		'Plutão': 'Aries em ...',
+		'Nódulo Lunar': 'Aries em ...'
+	},
+	"Peixes": {
+		"desc": 'Texto sobre aries',
+		"Lua": 'Como é a lua em aries',
+		'Mercúrio': 'Aries em ...',
+		'Vênus': 'Aries em ...',
+		'Marte': 'Aries em ...',
+		'Júpiter': 'Aries em ...',
+		'Saturno': 'Aries em ...',
+		'Urano': 'Aries em ...',
+		'Netuno': 'Aries em ...',
+		'Plutão': 'Aries em ...',
+		'Nódulo Lunar': 'Aries em ...'
+	}
+}
+
+
 /* FUNCOES */
-function listaSignos( signoBase ) {
+
+function listaSignos(signoBase) {
 	while ( signos[0] != signoBase )
 		signos.unshift(signos.pop());
 	return signos;
@@ -80,13 +255,18 @@ function adicionaAspecto() {
 	var aspecto = $(".seletor-aspecto option:selected").val();
 
 	var celula = $('#tabela-signo').find(".signo:contains(" + signo + ")").next();
-	var rotulo = $('<label>').addClass('label label-default').text(aspecto);
+	var rotulo = $('<span>').addClass('label label-default').text(aspecto);
 
 	rotulo.appendTo(celula);
 }
 
-function getText() {
-	return " Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+function getText(signo, aspecto) {
+	if ( aspecto )
+		return data[signo][aspecto];
+	else {
+		var campo = 'desc';
+		return data[signo][campo];
+	}
 }
 
 function significadoLetra(letra) {
@@ -95,19 +275,21 @@ function significadoLetra(letra) {
 
 function inserePainel(local, signo, aspecto) {
 	// código painel + inserir após resultado
-	var titulo;
+	var titulo, texto;
 	if ( aspecto != null ) {
 		titulo = aspecto + ' em ' + signo;
+		texto = getText(signo, aspecto);
 	}
 	else {
 		titulo = signo;
+		texto = getText(signo);
 	}
 	var painel = $('<div>').addClass('panel panel-default')
 		.appendTo($('<div>').addClass('col-xs-12 col-md-6').appendTo(local));
 	$('<h3>').addClass('panel-title').text(titulo)
 		.appendTo($('<div>').addClass('panel-heading')
 			.appendTo(painel));
-	$('<div>').addClass('panel-body').text(getText())
+	$('<div>').addClass('panel-body').text(texto)
 		.appendTo(painel);
 }
 
@@ -148,7 +330,7 @@ function incluirAnaliseNome() {
 	for ( var i = 0; i < letras.length; i++ ) {
 		var linha = $('<tr>');
 		$('<th>').addClass('col-xs-1').text(letras[i]).appendTo(linha);
-		$('<td>').addClass('col-xs11').text(significadoLetra(letras[i])).appendTo(linha);
+		$('<td>').addClass('col-xs-11').text(significadoLetra(letras[i])).appendTo(linha);
 		linha.appendTo($('#analise-nome > tbody'));
 	}
 }
@@ -192,33 +374,36 @@ function testeAutomatizado() {
 
 	// insere aspectos
 	var celula = $('#tabela-signo').find(".signo:contains(Touro)").next();
-	$('<label>').addClass('label label-default').text("Lua").appendTo(celula);
-	$('<label>').addClass('label label-default').text("Marte").appendTo(celula);
+	$('<span>').addClass('label label-default').text("Lua").appendTo(celula);
+	$('<span>').addClass('label label-default').text("Marte").appendTo(celula);
 }
 
 $(document).ready( function() {
 	$(insereOpcoesdeSignos());
 	$(montaTabela());
 	$(montaAspectos());
+	$(testeAutomatizado());
 
 	$('form').attr('onsubmit', 'return false;'); // previne que a página seja recarregada
+
+	$('#select').change(function() {
+		$('#run').removeAttr('disabled');
+	});
 
 	$('#run').click(function() {
 		var signo = $(".seletor-signo option:selected").val();
 		$(preencheLinha(listaSignos(signo)));
-		$('select').removeAttr('disabled');
 		deletaAspectos();
+		console.log('Rodar');
+		$('select').removeAttr('disabled');
 	});
 
 	$('#adiciona-aspecto').click(adicionaAspecto);
 
-	// TODO: remover aspecto específico
-	$('label, .label.label-default').dblclick(function() {
-		$(this).css('background-color','transparent');
-		// $(this).remove();
+	$('span.label').dblclick(function() {
+		$(this).remove();
 	});
 
 	$('#gera-resultado').click(geraResultado);
 
-	$(testeAutomatizado());
 });

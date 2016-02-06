@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
@@ -18,6 +18,9 @@
 		}
 		.label {
 			margin-right: 5px;
+		}
+		td {
+			font-size: 14px;
 		}
 		td.aspectos {
 			min-width: 400px;
@@ -41,10 +44,10 @@
 				<label>Insira o signo</label>
 				<div class="form-inline">
 					<div class="form-group">
-						<select class="form-control seletor-signo" name="signo">
+						<select id="select" class="form-control seletor-signo" name="signo">
 							<option value="" selected disabled></option>
 						</select>
-						<button id="run" class="btn btn-default">Confirmar</button>
+						<button id="run" class="btn btn-default" disabled>Confirmar</button>
 					</div>
 				</div>
 			</div>
@@ -53,12 +56,12 @@
 				<form class="form-inline">
 					<div class="form-group">
 						<select class="form-control seletor-signo aspecto" disabled name="signo">
-							<option value="" disabled selected>Escolha um signo</option>
+							<option value="" selected>Escolha um signo</option>
 						</select>
 					</div>
 					<div class="form-group">
 						<select class="form-control seletor-aspecto" disabled name="signo">
-							<option value="" disabled selected>Escolha um aspecto</option>
+							<option value="" selected>Escolha um aspecto</option>
 						</select>
 						<button id="adiciona-aspecto" class="btn btn-primary">
 							<span class="glyphicon glyphicon-plus"></span>
@@ -80,13 +83,13 @@
 		<!-- Resultados -->
 		<div id="resultados">
 			<div id="resultado-signos">
-				<h2>Signos</h2>
+				<!-- <h2>Signos</h2> -->
 			</div>
 			<div id="resultado-aspectos">
-				<h2>Aspectos</h2>
+				<!-- <h2>Aspectos</h2> -->
 			</div>
 			<div id="resultado-nome">
-				<h2>Análise do Nome</h2>
+				<!-- <h2>Análise do Nome</h2> -->
 				<div class="row">
 					<div class="col-xs-12">
 						<table id="analise-nome" class="table table-bordered table-striped table-hover">
