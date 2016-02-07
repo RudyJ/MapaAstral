@@ -80,7 +80,7 @@ function inserePainel(local, signo, aspecto) {
 		texto = getText(signo);
 	}
 	var painel = $('<div>').addClass('panel panel-default')
-		.appendTo($('<div>').addClass('col-xs-12').appendTo(local));
+		.appendTo($('<div>').attr('id','paineis').addClass('col-xs-12').appendTo(local));
 	$('<h3>').addClass('panel-title').text(titulo)
 		.appendTo($('<div>').addClass('panel-heading')
 			.appendTo(painel));
@@ -120,7 +120,7 @@ function incluirPainelAspectos() {
 }
 
 function incluirAnaliseNome() {
-	var letras = $('#nome').val().split("");
+	var letras = $('#nome').val().toUpperCase().split("");
 
 	for ( var i = 0; i < letras.length; i++ ) {
 		var linha = $('<tr>');
@@ -141,17 +141,27 @@ function geraResultado() {
 	$('<h2>').text('Aspectos').appendTo(divAspectos);
 	$('<h2>').text('Análise do Nome').appendTo(divNome);
 
-	$('div', {
+	var estruturaTabela = $('<table>', {
 		'id':'analise-nome',
 		'class':'table table-bordered table-striped table-hover'
-	}).appendTo(
+	});
+
+	var cab = $('<thead>');
+	$('<th>').text('Letras').appendTo(cab);
+	$('<th>').text('Significado').appendTo(cab);
+	$('<tbody>').appendTo(estruturaTabela);
+	cab.appendTo(estruturaTabela);
+
+	estruturaTabela.appendTo(
 		$('<div>').addClass('col-xs-12')
 			.appendTo($('<div>').addClass('row'))
-	)
-
+			.appendTo(divNome)
+	);
 	incluirPainelSignos();
 	incluirPainelAspectos();
 	incluirAnaliseNome();
+
+	$('#paineis .panel').first().removeClass('panel-default').addClass('panel-primary');
 }
 
 function deletaAspectos() {
@@ -177,7 +187,7 @@ $(document).ready( function() {
 	$(insereOpcoesdeSignos());
 	$(montaTabela());
 	$(montaAspectos());
-	$(testeAutomatizado());
+	// $(testeAutomatizado());
 
 	$('form').attr('onsubmit', 'return false;'); // previne que a página seja recarregada
 
