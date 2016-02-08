@@ -173,7 +173,7 @@ function deletaAspectos() {
 }
 
 function testeAutomatizado() {
-
+	
 	// seleciona signo
 	$(preencheLinha(listaSignos('Áries')));
 
