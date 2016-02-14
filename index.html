@@ -5,28 +5,8 @@
 	<title>Mapa Astral</title>
 	<meta name="viewport" width="device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript" src="data.js"></script>
-	<style>
-		body {
-			margin: auto;
-			max-width: 100rem;
-		}
-		h1, h2 {
-			font-weight: 300;
-		}
-		label {
-			font-weight: 400;
-		}
-		.label {
-			margin-right: 5px;
-		}
-		td {
-			font-size: 14px;
-		}
-		td.aspectos {
-			min-width: 400px;
-		}
-	</style>
 </head>
 <body>
 	<div class="container col-md-12">
@@ -78,25 +58,26 @@
 		<div class="row">
 			<div class="col-xs-12" id="dados"></div>
 		</div>
-		<button id="gera-resultado" class="btn btn-block btn-success">Gerar Relatório</button>
+		<a href="#" id="gera-resultado" disabled class="btn btn-block btn-success">Gerar Relatório</a>
 		<hr>
-
 		<!-- Resultados -->
-		<div id="resultados">
-			<div id="resultado-signos">
-				<!-- <h2>Signos</h2> -->
-			</div>
-			<div id="resultado-aspectos">
-				<!-- <h2>Aspectos</h2> -->
-			</div>
-			<div id="resultado-nome">
-				<!-- <h2>Análise do Nome</h2> -->
-			</div>
-		</div>
+        <div id="resultados">
+            <div id="resultado-signos">
+                <!-- <h2>Signos</h2> -->
+            </div>
+            <div id="resultado-aspectos">
+                <!-- <h2>Aspectos</h2> -->
+            </div>
+            <div id="resultado-nome">
+                <!-- <h2>Análise do Nome</h2> -->
+            </div>
+        </div>
+		<button id="btn-baixa-pdf" class="btn btn-block btn-primary hidden">Download PDF</button>
 	</div> <!-- container-->
 	<!-- -->
 
 	<script src="lib/jquery/dist/jquery.min.js"></script>
+	<script src="jspdf.min.js"></script>
 	<script src="horoscopo.js"></script>
 </body>
 </html>

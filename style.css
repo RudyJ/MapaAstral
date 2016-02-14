@@ -1,0 +1,19 @@
+body {
+    margin: auto;
+    max-width: 100rem;
+}
+h1, h2 {
+    font-weight: 300;
+}
+label {
+    font-weight: 400;
+}
+.label {
+    margin-right: 5px;
+}
+td {
+    font-size: 14px;
+}
+td.aspectos {
+    min-width: 400px;
+}

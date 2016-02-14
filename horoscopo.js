@@ -162,6 +162,8 @@ function geraResultado() {
 	incluirAnaliseNome();
 
 	$('#paineis .panel').first().removeClass('panel-default').addClass('panel-primary');
+	$('#btn-baixa-pdf').removeClass('hidden');
+	$('<hr>').insertAfter($('#btn-baixa-pdf'));
 }
 
 function deletaAspectos() {
@@ -183,6 +185,13 @@ function testeAutomatizado() {
 	$('<span>').addClass('label label-default').text("Marte").appendTo(celula);
 }
 
+function geraPDF() {
+	console.log('Gerar PDF');
+	var doc = new jsPDF();
+	doc.fromHTML($('#resultados').get(0), 20, 20, {'width': 500});
+	doc.save('mapa.ddf');
+}
+
 $(document).ready( function() {
 	$(insereOpcoesdeSignos());
 	$(montaTabela());
@@ -199,8 +208,7 @@ $(document).ready( function() {
 		var signo = $(".seletor-signo option:selected").val();
 		$(preencheLinha(listaSignos(signo)));
 		deletaAspectos();
-		console.log('Rodar');
-		$('select').removeAttr('disabled');
+		$('select, #gera-resultado').removeAttr('disabled');
 	});
 
 	$('#adiciona-aspecto').click(adicionaAspecto);
@@ -210,4 +218,6 @@ $(document).ready( function() {
 	});
 
 	$('#gera-resultado').click(geraResultado);
+
+	$('#btn-baixa-pdf').on('click', geraPDF);
 });
