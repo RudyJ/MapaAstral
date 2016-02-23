@@ -175,7 +175,7 @@ function deletaAspectos() {
 }
 
 function testeAutomatizado() {
-	
+
 	// seleciona signo
 	$(preencheLinha(listaSignos('Áries')));
 
@@ -187,9 +187,19 @@ function testeAutomatizado() {
 
 function geraPDF() {
 	console.log('Gerar PDF');
+	var lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 	var doc = new jsPDF();
-	doc.fromHTML($('#resultados').get(0), 20, 20, {'width': 500});
-	doc.save('mapa.ddf');
+
+	doc.setFontSize(40);
+	doc.text(20,20, 'Mapa Astral');
+
+	doc.setFontSize(18);
+	doc.text(20,30, 'Signos');
+
+	doc.setFontSize(12);
+	doc.text(20,40, lorem);
+
+	doc.save('mapa.pdf');
 }
 
 $(document).ready( function() {
@@ -218,6 +228,4 @@ $(document).ready( function() {
 	});
 
 	$('#gera-resultado').click(geraResultado);
-
-	$('#btn-baixa-pdf').on('click', geraPDF);
 });

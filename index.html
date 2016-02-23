@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript" src="data.js"></script>
+	<script src="jspdf.min.js"></script>
 </head>
 <body>
 	<div class="container col-md-12">
@@ -72,12 +73,12 @@
                 <!-- <h2>Análise do Nome</h2> -->
             </div>
         </div>
-		<button id="btn-baixa-pdf" class="btn btn-block btn-primary hidden">Download PDF</button>
+		<hr>
+		<a href="javascript:geraPDF()" id="btn-baixa-pdf" class="">Download PDF</a>
 	</div> <!-- container-->
 	<!-- -->
 
 	<script src="lib/jquery/dist/jquery.min.js"></script>
-	<script src="jspdf.min.js"></script>
 	<script src="horoscopo.js"></script>
 </body>
 </html>
